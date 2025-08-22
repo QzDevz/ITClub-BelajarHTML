@@ -323,29 +323,16 @@
         <footer class="footer">
             <div class="footer-content">
                 <p>&copy; 2025 Mahardika Putra. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="https://github.com/QzDevz" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
+                <div class="footer-social"></div>
             </div>
         </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Simple loading overlay handler
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
+            // AOS
             AOS.init({
                 duration: 800,
                 easing: 'ease-out',
@@ -353,10 +340,9 @@
                 offset: 100
             });
 
-            // Simple loading overlay removal
             const loadingOverlay = document.getElementById('loading-overlay');
             if (loadingOverlay) {
-                // Hide loading overlay after short delay
+
                 setTimeout(() => {
                     loadingOverlay.classList.add('hidden');
                     setTimeout(() => {
@@ -367,7 +353,7 @@
                 }, 1500);
             }
 
-            // Smooth scrolling for navigation
+            // Smooth
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -381,7 +367,6 @@
                 });
             });
 
-            // Active navigation highlighting
             const sections = document.querySelectorAll('section');
             const navItems = document.querySelectorAll('.nav-item');
 

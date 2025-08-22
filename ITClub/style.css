@@ -669,7 +669,7 @@ body {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -680,7 +680,7 @@ body {
 }
 
 .footer-social {
-    display: flex;
+    display: -webkit-flex;
     gap: 1rem;
 }
 
