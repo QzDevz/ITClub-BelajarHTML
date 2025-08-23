@@ -98,7 +98,7 @@
                 <a href="https://x.com/Vinzalm" class="social-btn twitter">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://instagram.com/@qzdevz" class="social-btn instagram">
+                <a href="https://instagram.com/qzdevz" class="social-btn instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -156,6 +156,7 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h3>Hello! I'm Yorushika</h3>
+                        <h1>Call me Yoka Or Dika(Irl)</h1>
                         <p>
                             I'm a creative developer with a passion for fur art, animation, and gaming. 
                             I love bringing ideas to life through code and design, creating experiences 
@@ -206,7 +207,7 @@
                                 <p>ClipStudio Paint</p>
                                 <div class="portfolio-actions">
                                     <a href="https://www.clipstudio.net/en/">
-                                    <button class="btn btn-small">Download CSP</button>
+                                        <button class="btn btn-small">Download CSP</button>
                                     </a>
                                 </div>
                             </div>
@@ -220,12 +221,13 @@
                                 <p>ClipStudio Paint, Adobe AfterEffect</p>
                                 <div class="portfolio-actions">
                                     <a href="https://www.adobe.com/">
-                                    <button class="btn btn-small">Get Adobe</button>
+                                        <button class="btn btn-small">Get Adobe</button>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </section>
 
             <!-- Skills Section -->
@@ -239,7 +241,7 @@
                         <h3>Frontend</h3>
                         <div class="skills-list">
                             <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">CSS</span>
                             <span class="skill-tag">JavaScript</span>
                         </div>
                     </div>
@@ -299,7 +301,7 @@
                         </div>
                     </div>
                     <div class="contact-form">
-                        <form>
+                        <form id="contactForm">
                             <div class="form-group">
                                 <input type="text" placeholder="Your Name" required>
                             </div>
@@ -319,17 +321,55 @@
             </section>
         </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p>&copy; 2025 Mahardika Putra. All rights reserved.</p>
-                <div class="footer-social"></div>
-            </div>
-        </footer>
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>&copy; 2025 Mahardika Putra. All rights reserved.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/QzDevz" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/Vinzalm" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/qzdevz" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Here you would normally send the data to a server
+            // For now, we'll just show a success message
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
 
         document.addEventListener('DOMContentLoaded', function() {
             // AOS
